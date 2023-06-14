@@ -36,6 +36,7 @@ const ContactForm = () => {
 
     dispatch(addContact(newContact));
     e.currentTarget.reset();
+    setName('');
   };
 
   return (
