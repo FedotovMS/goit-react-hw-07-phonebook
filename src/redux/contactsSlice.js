@@ -1,13 +1,10 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
+import { contactsInitialState } from './initialState';
 
 const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: {
-    items: [],
-    isLoading: false,
-    error: null,
-  },
+  initialState: contactsInitialState,
   extraReducers: builder =>
     builder
       .addCase(fetchContacts.fulfilled, (state, { payload }) => {
